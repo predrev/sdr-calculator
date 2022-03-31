@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			BPS SDR Calculator
+		</title>
+	    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+		<style media="screen"></style>
+	</head>
+	<body class="calc-body">
+		
+		<div class="jumbotron jumbotron-fluid">
+		  <div class="container">
+		    <h1 class="display-4">SDR Calculator</h1>
+		    <p class="lead">Sales Development Rep Math Worksheet</p>
+		  </div>
+		</div>
+		
+		<div class="container">
+			
+			<div class="row mt-5">
+				<div class="col-md">
+					<div class="card mb-3">
+					  <div class="card-body">
+					    <h5 class="card-title">SDR Metrics</h5>
+
+						<div class="form-group mb-3 mt-3">
+							<label for="sdr_activities">SDR Activities</label><input class="form-control" type="number" name="sdr_activities" value="75" min="1" id="sdr_activities">
+						</div>
+						
+						<label for="conversion_rate">Conversion Rate</label>
+						<div class="input-group mb-3">
+							<input class="form-control" type="number" name="conversion_rate" value="0.5" min="0.1" step="0.1" id="conversion_rate">
+						  <div class="input-group-append">
+						    <span class="input-group-text" id="basic-addon2">%</span>
+						  </div>
+						</div>
+						
+						<label for="booked_to_held">Booked to Held</label>
+						<div class="input-group mb-3">
+							<input class="form-control" type="number" name="booked_to_held" value="50" min="1" id="booked_to_held">
+						  <div class="input-group-append">
+						    <span class="input-group-text" id="basic-addon2">%</span>
+						  </div>
+						</div>
+						
+						<div class="form-group calc mb-3">
+							<label for="meetings_per_month">Meetings Per Month</label><input class="form-control" type="text" name="meetings_per_month" value="" id="meetings_per_month" disabled>
+						</div>
+						
+						<label for="held_to_pipeline">Held to Pipeline</label>
+						<div class="input-group mb-3">
+							<input class="form-control" type="number" name="held_to_pipeline" value="50" min="1" id="held_to_pipeline">
+						  <div class="input-group-append">
+						    <span class="input-group-text" id="basic-addon2">%</span>
+						  </div>
+						</div>
+						
+						<label for="pipeline_closed_won">Pipeline Closed-Won</label>
+						<div class="input-group mb-3">
+							<input class="form-control" type="number" name="pipeline_closed_won" value="20" min="1" step="1" id="pipeline_closed_won">
+						  <div class="input-group-append">
+						    <span class="input-group-text" id="basic-addon2">%</span>
+						  </div>
+						</div>
+						
+						<div class="form-group calc mb-3">
+							<label for="monthly_closed">Monthly Closed</label><input class="form-control" type="text" name="monthly_closed" value="" id="monthly_closed" disabled>
+						</div>
+
+					  </div>
+					</div>
+				</div>
+				<div class="col-md">
+					<div class="card mb-3">
+					  <div class="card-body">
+					    <h5 class="card-title mb-3">SDR Costs</h5>
+						
+						<label for="salary_commision">Salary + Commision</label>
+						<div class="input-group mb-3">
+						  <div class="input-group-prepend">
+						    <span class="input-group-text">$</span>
+						  </div>
+						  	<input class="form-control" type="number" name="salary_commision" value="72000" min="1000" step="1000" id="salary_commision">
+						  <div class="input-group-append">
+						    <span class="input-group-text">.00</span>
+						  </div>
+						</div>
+						
+						<label for="tools_data">Tools & Data</label>
+						<div class="input-group mb-3">
+						  <div class="input-group-prepend">
+						    <span class="input-group-text">$</span>
+						  </div>
+						  	<input class="form-control" type="number" name="tools_data" value="6000" min="0" step="100" id="tools_data">
+						  <div class="input-group-append">
+						    <span class="input-group-text">.00</span>
+						  </div>
+						</div>
+						
+						<div class="form-group calc mb-3">
+							<label for="management_overhead">Management Overhead</label><input class="form-control" type="text" name="management_overhead" value="" id="management_overhead" disabled>
+						</div>
+						
+						
+						<label for="sdr_manager_cost">SDR Manager Cost</label>
+						<div class="input-group mb-3">
+						  <div class="input-group-prepend">
+						    <span class="input-group-text">$</span>
+						  </div>
+						  	<input class="form-control" type="number" name="sdr_manager_cost" value="100000" min="0" step="1000" id="sdr_manager_cost">
+						  <div class="input-group-append">
+						    <span class="input-group-text">.00</span>
+						  </div>
+						</div>
+						
+
+						<div class="form-group mb-3">
+							<label for="sdr_manager_direct_reports">SDR Manager Direct Reports</label><input class="form-control" type="number" name="sdr_manager_direct_reports" value="7" min="1" step="1" id="sdr_manager_direct_reports">
+						</div>
+
+
+						<label for="general_employee_overhead">General Employee Overhead</label>
+						<div class="input-group mb-3">
+						  	<input class="form-control" type="number" name="general_employee_overhead" value="15" min="0" step="1" id="general_employee_overhead">
+							  <div class="input-group-append">
+							    <span class="input-group-text" id="basic-addon2">%</span>
+							  </div>
+						</div>
+						
+						<div class="form-group mb-3">
+							<label for="cost_per_sdr">Cost Per SDR</label><input class="form-control" type="text" name="cost_per_sdr" value="" id="cost_per_sdr" disabled>
+						</div>
+
+					  </div>
+					</div>
+				</div>
+				<div class="col-md">
+					<div class="card mb-3">
+					  <div class="card-body">
+					    <h5 class="card-title">Sales Metrics</h5>
+
+
+						<label for="sequenced_to_held_months">Sequenced to Held</label>
+						<div class="input-group mb-3">
+							<input class="form-control" type="number" name="sequenced_to_held_months" value="1" min="0" step="1" id="sequenced_to_held_months">
+						  <div class="input-group-append">
+						    <span class="input-group-text" id="basic-addon2">months</span>
+						  </div>
+						</div>
+
+						<label for="ramp_sdr_productivity">Ramp SDR Productivity</label>
+						<div class="input-group mb-3">
+							<input class="form-control" type="number" name="ramp_sdr_productivity" value="3" min="0" step="1" id="ramp_sdr_productivity">
+						  <div class="input-group-append">
+						    <span class="input-group-text" id="basic-addon2">months</span>
+						  </div>
+						</div>
+						
+					<label for="pipeline_to_win_months">Pipeline to Win </label>
+						<div class="input-group mb-3">
+							<input class="form-control" type="number" name="pipeline_to_win_months" value="2" min="0" step="1" id="pipeline_to_win_months">
+						  <div class="input-group-append">
+						    <span class="input-group-text" id="basic-addon2">months</span>
+						  </div>
+						</div>
+						
+						<label for="average_deal">Average Deal</label> 
+						<div class="input-group mb-3">
+						  <div class="input-group-prepend">
+						    <span class="input-group-text">$</span>
+						  </div>
+						<input class="form-control" type="number" name="average_deal" value="25000" min="100" step="100" id="average_deal">
+						  <div class="input-group-append">
+						    <span class="input-group-text">.00</span>
+						  </div>
+						</div>
+
+					  </div>
+					</div>
+				</div>
+				
+			</div>
+			
+		
+		<div class="row mt-5">
+			
+			<div class="col">
+				
+
+				<table class="table">
+				  <thead>
+				    <tr>
+				      <th scope="col"></th>
+				      <th scope="col" id="current-year-header">Ramp Year</th>
+				      <th scope="col" id="second-year-header">First Full Year</th>
+				      <th scope="col" id="third-year-header">Second Full Year</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				    <tr id="pipeline">
+				      <th class="font-weight-bold">Pipeline</th>
+				      <td class="current-year"></td>
+				      <td class="second-year"></td>
+				      <td class="third-year"></td>
+				    </tr>
+				    <tr id="revenue">
+				      <th class="font-weight-bold">Revenue</th>
+				      <td class="current-year"></td>
+				      <td class="second-year"></td>
+				      <td class="third-year"></td>
+				    </tr>
+				    <tr id="cost">
+				      <th class="font-weight-bold">Cost</th>
+				      <td class="current-year"></td>
+				      <td class="second-year"></td>
+				      <td class="third-year"></td>
+				    </tr>
+				    <tr id="sales-dev">
+				      <th class="font-weight-bold">$1 invested in Sales Dev Creates</th>
+				      <td class="current-year"></td>
+				      <td class="second-year"></td>
+				      <td class="third-year"></td>
+				    </tr>
+				    <tr id="revenue-costs">
+				      <th class="font-weight-bold">Every $1 in Revenue Costs</th>
+				      <td class="current-year"></td>
+				      <td class="second-year"></td>
+				      <td class="third-year"></td>
+				    </tr>
+				  </tbody>
+				</table>
+				
+			</div>
+			
+		</div>
+			
+	</div> <!-- end container -->
+		
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="javascript/calc.js" type="text/javascript"></script>
+		
+	</body>
+</html>
